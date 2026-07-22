@@ -13,7 +13,7 @@ function play(){
     for(let i=0;i<gamepattern.length;i++){
         setTimeout(()=>{
             flashbutton(gamepattern[i]);
-            const audio=new Audio("sounds/"+gamepattern[i]+".mp3");
+            const audio=new Audio("./sounds/"+gamepattern[i]+".mp3");
             audio.play();
         },500*(i+1))
         
@@ -41,7 +41,7 @@ function wrong_anm() {
 
 $(".btn").on("click", function () {
     if (!started) {
-        const wrong = new Audio("sounds/wrong.mp3");
+        const wrong = new Audio("./sounds/wrong.mp3");
         wrong.play();
         wrong_anm();
         changetext();
@@ -61,7 +61,7 @@ $(".btn").on("click", function () {
     
     console.log(userpattern);
     
-    const audio = new Audio("sounds/" + color + ".mp3");
+    const audio = new Audio("./sounds/" + color + ".mp3");
     audio.play();
 });
 // Generate a random color each time 
@@ -88,7 +88,7 @@ function checkanswer(index){
     }
     else{
         wrong_anm();
-        const wrong = new Audio("sounds/wrong.mp3");
+        const wrong = new Audio("./sounds/wrong.mp3");
         wrong.play();
         changetext();
         started=false;
